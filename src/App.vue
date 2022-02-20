@@ -1,119 +1,146 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="wrapper">
+    <div class="sidebar">
+      <div class="logo">
+        <img alt="aspire logo" src="@/assets/images/aspire-logo.svg" />
+        <p class="logo-text">
+          Trusted way of banking for 3,000+ SMEs and startups in Singapore
+        </p>
+      </div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+      <nav class="main-navbar">
+        <RouterLink to="/" class="nav-link nav-home">
+          <HomeIcon class="nav-link-icon" />
+          <span class="nav-link-text">Home</span>
+        </RouterLink>
+        <RouterLink to="/cards" class="nav-link nav-cards">
+          <CardIcon class="nav-link-icon" />
+          <span class="nav-link-text">Cards</span>
+        </RouterLink>
+        <RouterLink to="/about" class="nav-link nav-payments">
+          <PaymentIcon class="nav-link-icon" />
+          <span class="nav-link-text">Payments</span>
+        </RouterLink>
+        <RouterLink to="/about" class="nav-link nav-credits">
+          <CreditIcon class="nav-link-icon" />
+          <span class="nav-link-text">Credit</span>
+        </RouterLink>
+        <RouterLink to="/about" class="nav-link nav-settings">
+          <AccountIcon class="nav-link-icon" />
+          <span class="nav-link-text">Settings</span>
+        </RouterLink>
       </nav>
     </div>
-  </header>
-
-  <RouterView />
+    <div class="view-container">
+      <RouterView />
+    </div>
+  </div>
 </template>
 
+<script>
+// import { RouterLink, RouterView } from "vue-router";
+// import HelloWorld from "@/components/HelloWorld.vue";
+import AccountIcon from "@/components/icons/IconAccount.vue";
+import HomeIcon from "@/components/icons/IconHome.vue";
+import CardIcon from "@/components/icons/IconCard.vue";
+import PaymentIcon from "@/components/icons/IconPayment.vue";
+import CreditIcon from "@/components/icons/IconCredit.vue";
+export default {
+  components: {
+    AccountIcon,
+    HomeIcon,
+    CardIcon,
+    PaymentIcon,
+    CreditIcon,
+  },
+};
+</script>
+
 <style>
-@import '@/assets/base.css';
+@import "@/assets/base.css";
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+.wrapper {
+  display: flex;
+  min-height: 100%;
 }
 
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.sidebar {
+  background: #0c365a;
+  width: 340px;
+  padding: 45px;
+  height: 100%;
+  position: fixed;
 }
 
-.logo {
+.logo-text {
+  color: rgb(255 255 255 / 30%);
+  font-size: 15px;
+}
+
+.main-navbar {
+  margin: 80px 0;
+}
+
+.nav-link {
   display: block;
-  margin: 0 auto 2rem;
-}
-
-a,
-.green {
+  color: #fff;
+  background-repeat: no-repeat;
+  background-position: left;
+  font-size: 16px;
+  margin: 40px 0;
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.nav-link-icon {
+  vertical-align: middle;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+.nav-link-text {
+  padding-left: 16px;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active,
+.router-link-active {
+  color: #01d167;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.nav-link:hover .b {
+  fill: #01d167;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.router-link-active {
+  font-weight: 600;
 }
 
-nav a:first-of-type {
-  border: 0;
+/* .nav-home {
+  background-image: url("@/assets/images/home.svg");
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.nav-cards {
+  background-image: url("@/assets/images/debit-card/card.svg");
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.nav-payments {
+  background-image: url("@/assets/images/payments.svg");
+}
 
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.nav-credits {
+  background-image: url("@/assets/images/credit.svg");
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.nav-settings {
+  background-image: url("@/assets/images/account.svg");
+} */
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.view-container {
+  position: relative;
+  left: 340px;
+  width: calc(100% - 340px);
+  padding: 60px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 </style>
