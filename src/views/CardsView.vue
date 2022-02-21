@@ -36,7 +36,14 @@
         <div class="card-tabs-content">
           <div class="flex">
             <div class="card-list">
-              <p class="show-card-number">Show card number</p>
+              <p class="show-card-number">
+                <img
+                  class="show-card-number-icon"
+                  src="@/assets/images/remove_red_eye.svg"
+                  alt=""
+                />
+                Show card number
+              </p>
               <div class="card">
                 <div class="card-front card-part flex">
                   <img
@@ -109,7 +116,166 @@
               </div>
             </div>
             <div class="card-detail-transanction">
-              <div class="card-details"></div>
+              <div class="card-details">
+                <Accordion
+                  title="Card Details"
+                  icon="card-details"
+                  isExpand="false"
+                >
+                  <p>Card Details</p>
+                </Accordion>
+                <Accordion
+                  title="Recent Transactions"
+                  icon="recent-transactions"
+                  isExpand="true"
+                >
+                  <div class="recent-transactions">
+                    <div class="recent-transaction-item flex">
+                      <div class="recent-transaction-item-icon bg-light-blue">
+                        <img
+                          src="@/assets/images/file-storage.svg"
+                          alt="file-storage"
+                        />
+                      </div>
+                      <div class="recent-transaction-item-content">
+                        <div class="flex space-between">
+                          <div>
+                            <p class="recent-transaction-item-title">Hamleys</p>
+                            <p class="recent-transaction-item-date">
+                              20 May 2020
+                            </p>
+                          </div>
+                          <div class="recent-transaction-item-amount">
+                            <p
+                              class="recent-transaction-item-amount-value text-green"
+                            >
+                              +$ 150
+                            </p>
+                          </div>
+                        </div>
+                        <div class="recent-transaction-item-refund">
+                          <p class="recent-transaction-item-refund-text">
+                            <span class="recent-transaction-item-refund-icon">
+                              <img
+                                src="@/assets/images/business-and-finance.svg"
+                                alt="business-and-finance"
+                              />
+                            </span>
+                            Refund on debit card
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="recent-transaction-item flex">
+                      <div class="recent-transaction-item-icon bg-light-green">
+                        <img
+                          src="@/assets/images/flights.svg"
+                          alt="file-storage"
+                        />
+                      </div>
+                      <div class="recent-transaction-item-content">
+                        <div class="flex space-between">
+                          <div>
+                            <p class="recent-transaction-item-title">Hamleys</p>
+                            <p class="recent-transaction-item-date">
+                              20 May 2020
+                            </p>
+                          </div>
+                          <div class="recent-transaction-item-amount">
+                            <p class="recent-transaction-item-amount-value">
+                              +$ 150
+                            </p>
+                          </div>
+                        </div>
+                        <div class="recent-transaction-item-refund">
+                          <p class="recent-transaction-item-refund-text">
+                            <span class="recent-transaction-item-refund-icon">
+                              <img
+                                src="@/assets/images/business-and-finance.svg"
+                                alt="business-and-finance"
+                              />
+                            </span>
+                            Refund on debit card
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="recent-transaction-item flex">
+                      <div class="recent-transaction-item-icon bg-light-red">
+                        <img
+                          src="@/assets/images/megaphone.svg"
+                          alt="file-storage"
+                        />
+                      </div>
+                      <div class="recent-transaction-item-content">
+                        <div class="flex space-between">
+                          <div>
+                            <p class="recent-transaction-item-title">Hamleys</p>
+                            <p class="recent-transaction-item-date">
+                              20 May 2020
+                            </p>
+                          </div>
+                          <div class="recent-transaction-item-amount">
+                            <p class="recent-transaction-item-amount-value">
+                              +$ 150
+                            </p>
+                          </div>
+                        </div>
+                        <div class="recent-transaction-item-refund">
+                          <p class="recent-transaction-item-refund-text">
+                            <span class="recent-transaction-item-refund-icon">
+                              <img
+                                src="@/assets/images/business-and-finance.svg"
+                                alt="business-and-finance"
+                              />
+                            </span>
+                            Refund on debit card
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="recent-transaction-item flex">
+                      <div class="recent-transaction-item-icon bg-light-blue">
+                        <img
+                          src="@/assets/images/file-storage.svg"
+                          alt="file-storage"
+                        />
+                      </div>
+                      <div class="recent-transaction-item-content">
+                        <div class="flex space-between">
+                          <div>
+                            <p class="recent-transaction-item-title">Hamleys</p>
+                            <p class="recent-transaction-item-date">
+                              20 May 2020
+                            </p>
+                          </div>
+                          <div class="recent-transaction-item-amount">
+                            <p class="recent-transaction-item-amount-value">
+                              +$ 150
+                            </p>
+                          </div>
+                        </div>
+                        <div class="recent-transaction-item-refund">
+                          <p class="recent-transaction-item-refund-text">
+                            <span class="recent-transaction-item-refund-icon">
+                              <img
+                                src="@/assets/images/business-and-finance.svg"
+                                alt="business-and-finance"
+                              />
+                            </span>
+                            Refund on debit card
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="view-all-card-transaction bg-light-green">
+                    <button class="view-all-card-transaction-btn text-green">
+                      View all card transactions
+                    </button>
+                  </div>
+                </Accordion>
+              </div>
               <div class="card-recent-details"></div>
             </div>
           </div>
@@ -127,6 +293,7 @@
 <script>
 import AddIcon from "@/components/icons/IconAdd.vue";
 import VisaIcon from "@/components/icons/IconVisa.vue";
+import Accordion from "@/components/TheAccordion.vue";
 
 export default {
   data() {
@@ -142,11 +309,22 @@ export default {
   components: {
     AddIcon,
     VisaIcon,
+    Accordion,
   },
 };
 </script>
 
 <style scoped>
+.card-list {
+  margin-right: 30px;
+  width: 50%;
+}
+
+.card-detail-transanction {
+  margin-left: 20px;
+  width: 50%;
+}
+
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -183,6 +361,7 @@ export default {
   border-radius: 4px;
   font-size: 13px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .add-icon {
@@ -199,10 +378,11 @@ export default {
 }
 
 .card-tab-btn {
-  font-size: 14px;
-  color: rgb(34 34 34 / 30%);
   background: transparent;
   border: 0;
+  color: rgb(34 34 34 / 30%);
+  cursor: pointer;
+  font-size: 14px;
   margin-right: 30px;
   padding: 0 0 5px 0;
 }
@@ -223,10 +403,14 @@ export default {
   display: flex;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
 .card {
   background: #01d167;
   border-radius: 8px;
-  width: 414px;
+  width: 100%;
   padding: 25px;
   margin: 10px 0;
 }
@@ -281,6 +465,8 @@ export default {
 
 .card-expire-date {
   color: #fff;
+  font-size: 13px;
+  font-weight: 600;
   letter-spacing: 0.3px;
 }
 
@@ -322,5 +508,98 @@ export default {
 .card-action-label {
   font-size: 13px;
   color: #0c365a;
+}
+
+.bg-light-blue {
+  background: #009dff1a;
+}
+
+.bg-light-green {
+  background: #00d6b51a;
+}
+
+.bg-light-red {
+  background: #f251951a;
+}
+
+.recent-transactions {
+  padding: 20px;
+}
+
+.recent-transaction-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px 0;
+}
+
+.recent-transaction-item-icon {
+  width: 48px;
+  border-radius: 100%;
+  margin-right: 10px;
+  text-align: center;
+  align-self: flex-start;
+  height: 48px;
+  padding: 10px;
+}
+
+.recent-transaction-item-icon > img {
+  vertical-align: middle;
+}
+
+.recent-transaction-item-content {
+  width: calc(100% - 48px);
+  padding: 5px;
+}
+
+.recent-transaction-item-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+}
+
+.recent-transaction-item-date {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.recent-transaction-item-refund-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #325baf;
+}
+
+.text-green {
+  color: #01d167;
+}
+
+.recent-transaction-item-amount-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.recent-transaction-item-refund {
+  margin-top: 10px;
+}
+
+.recent-transaction-item-refund-icon {
+  background: #325baf;
+  padding: 1px 5px;
+  border-radius: 7px;
+}
+
+.show-card-number-icon {
+  vertical-align: middle;
+}
+
+.view-all-card-transaction {
+  text-align: center;
+  padding: 10px;
+}
+
+.view-all-card-transaction-btn {
+  font-size: 13px;
+  font-weight: 500;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
 }
 </style>
