@@ -89,6 +89,7 @@ export default {
   font-size: 16px;
   margin: 40px 0;
   text-decoration: none;
+  outline: none;
 }
 
 .nav-link-icon {
