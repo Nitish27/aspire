@@ -6,26 +6,26 @@
       </p>
     </LogoComponent>
 
-    <nav class="main-navbar">
-      <RouterLink to="/" class="nav-link nav-home">
+    <nav class="main-navbar mt80 mb80">
+      <RouterLink to="/" class="nav-link nav-home mt40 mb40">
         <HomeIcon class="nav-link-icon" />
-        <span class="nav-link-text">Home</span>
+        <span class="nav-link-text pl20">Home</span>
       </RouterLink>
-      <RouterLink to="/cards" class="nav-link nav-cards">
+      <RouterLink to="/cards" class="nav-link nav-cards mt40 mb40">
         <CardIcon class="nav-link-icon" />
-        <span class="nav-link-text">Cards</span>
+        <span class="nav-link-text pl20">Cards</span>
       </RouterLink>
-      <RouterLink to="/payments" class="nav-link nav-payments">
+      <RouterLink to="/payments" class="nav-link nav-payments mt40 mb40">
         <PaymentIcon class="nav-link-icon" />
-        <span class="nav-link-text">Payments</span>
+        <span class="nav-link-text pl20">Payments</span>
       </RouterLink>
-      <RouterLink to="/credits" class="nav-link nav-credits">
+      <RouterLink to="/credits" class="nav-link nav-credits mt40 mb40">
         <CreditIcon class="nav-link-icon" />
-        <span class="nav-link-text">Credit</span>
+        <span class="nav-link-text pl20">Credit</span>
       </RouterLink>
-      <RouterLink to="/settings" class="nav-link nav-settings">
+      <RouterLink to="/settings" class="nav-link nav-settings mt40 mb40">
         <AccountIcon class="nav-link-icon" />
-        <span class="nav-link-text">Settings</span>
+        <span class="nav-link-text pl20">Settings</span>
       </RouterLink>
     </nav>
   </div>

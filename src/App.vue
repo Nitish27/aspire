@@ -27,7 +27,3 @@ SidebarView
 <style lang="scss">
 @import "./assets/scss/app.scss";
 </style>
-
-<style>
-@import "@/assets/base.css";
-</style>

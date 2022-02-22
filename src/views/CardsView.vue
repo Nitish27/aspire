@@ -3,8 +3,8 @@
     <div class="card-header">
       <div class="card-balance">
         <p class="card-balance-text">Available balance</p>
-        <div class="card-balance-amount">
-          <span class="card-currency-tag">$</span>
+        <div class="card-balance-amount mt5">
+          <span class="card-currency-tag mr10">$</span>
           <h1>3,000</h1>
         </div>
       </div>
@@ -13,22 +13,22 @@
           class="card-add-btn"
           @btnClickHandler="clickAddNewCard"
         >
-          <AddIcon class="add-icon" /> New Card
+          <AddIcon class="add-icon mr10" /> New Card
         </button-component>
       </div>
     </div>
 
-    <div class="card-content-container">
+    <div class="card-content-container mt30">
       <div class="card-tab-btns">
         <button
-          class="card-tab-btn"
+          class="card-tab-btn mr30 pb5 pl0 pr0"
           :class="{ active: activeTab === 'my-cards' }"
           @click="tabClick('my-cards')"
         >
           My debit cards
         </button>
         <button
-          class="card-tab-btn"
+          class="card-tab-btn mr30 pb5 pl0 pr0"
           :class="{ active: activeTab === 'company-cards' }"
           @click="tabClick('company-cards')"
         >
@@ -36,109 +36,18 @@
         </button>
       </div>
       <div class="my-cards-tab" v-if="activeTab == 'my-cards'">
-        <div class="card-tabs-content">
+        <div class="card-tabs-content pt25 pb25 pr35 pl35 mt20 mb20">
           <div class="flex">
-            <div class="card-list">
-              <p class="show-card-number">
-                <img
-                  class="show-card-number-icon"
-                  src="@/assets/images/remove_red_eye.svg"
-                  alt=""
-                />
-                Show card number
-              </p>
-              <div class="card">
-                <div class="card-front card-part flex">
-                  <img
-                    class="card-front-company"
-                    src="@/assets/images/aspire-logo-1.svg"
-                  />
-                  <h2 class="card-front-username">Mark Henry</h2>
-                  <p class="card-front-number">
-                    <span class="text-security-disc">1234</span>
-                    <span class="text-security-disc">4532</span>
-                    <span class="text-security-disc">6753</span> 6258
-                  </p>
-                  <div class="flex">
-                    <div class="card-expire flex">
-                      <span class="card-expire-label">Thru:</span>
-                      <p class="card-expire-date">12/20</p>
-                    </div>
-                    <div class="card-cvv flex">
-                      <span class="card-cvv-label">CVV:</span>
-                      <p class="card-cvv-number">***</p>
-                    </div>
-                  </div>
+            <div class="card-list mr30">
+              <card-component :card="card" />
 
-                  <div class="card-type">
-                    <VisaIcon />
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-action">
+              <div class="card-action p25 mt30 mb30">
                 <div class="card-action-list">
-                  <div class="card-action-list-item">
-                    <button-component
-                      class="card-action-list-item-btn"
-                      @btnClickHandler="clickCardAction('freeze')"
-                    >
-                      <img
-                        src="@/assets/images/freeze-card.svg"
-                        alt="freeze card"
-                      />
-                      <p class="card-action-label">Freeze Card</p>
-                    </button-component>
-                  </div>
-                  <div class="card-action-list-item">
-                    <button-component
-                      class="card-action-list-item-btn"
-                      @btnClickHandler="clickCardAction('set-spend-limit')"
-                    >
-                      <img
-                        src="@/assets/images/set-spend-limit.svg"
-                        alt="set spend limit"
-                      />
-                      <p class="card-action-label">Set spend limit</p>
-                    </button-component>
-                  </div>
-                  <div class="card-action-list-item">
-                    <button-component
-                      class="card-action-list-item-btn"
-                      @btnClickHandler="clickCardAction('add-to-gpay')"
-                    >
-                      <img src="@/assets/images/gpay.svg" alt="add to gpay" />
-                      <p class="card-action-label">Add to Gpay</p>
-                    </button-component>
-                  </div>
-                  <div class="card-action-list-item">
-                    <button-component
-                      class="card-action-list-item-btn"
-                      @btnClickHandler="clickCardAction('replace-card')"
-                    >
-                      <img
-                        src="@/assets/images/replace-card.svg"
-                        alt="replace card"
-                      />
-                      <p class="card-action-label">Replace card</p>
-                    </button-component>
-                  </div>
-                  <div class="card-action-list-item">
-                    <button-component
-                      class="card-action-list-item-btn"
-                      @btnClickHandler="clickCardAction('cancel-card')"
-                    >
-                      <img
-                        src="@/assets/images/deactivate-card.svg"
-                        alt="cancel card"
-                      />
-                      <p class="card-action-label">Cancel card</p>
-                    </button-component>
-                  </div>
+                  <card-action-component />
                 </div>
               </div>
             </div>
-            <div class="card-detail-transanction">
+            <div class="card-detail-transanction ml20">
               <div class="card-details">
                 <Accordion
                   title="Card Details"
@@ -152,150 +61,14 @@
                   icon="recent-transactions"
                   isExpand="true"
                 >
-                  <div class="recent-transactions">
-                    <div class="recent-transaction-item flex">
-                      <div class="recent-transaction-item-icon bg-light-blue">
-                        <img
-                          src="@/assets/images/file-storage.svg"
-                          alt="file-storage"
-                        />
-                      </div>
-                      <div class="recent-transaction-item-content">
-                        <div class="flex space-between">
-                          <div>
-                            <p class="recent-transaction-item-title">Hamleys</p>
-                            <p class="recent-transaction-item-date">
-                              20 May 2020
-                            </p>
-                          </div>
-                          <div class="recent-transaction-item-amount">
-                            <p
-                              class="recent-transaction-item-amount-value text-green"
-                            >
-                              +$ 150
-                            </p>
-                          </div>
-                        </div>
-                        <div class="recent-transaction-item-refund">
-                          <p class="recent-transaction-item-refund-text">
-                            <span class="recent-transaction-item-refund-icon">
-                              <img
-                                src="@/assets/images/business-and-finance.svg"
-                                alt="business-and-finance"
-                              />
-                            </span>
-                            Refund on debit card
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="recent-transaction-item flex">
-                      <div class="recent-transaction-item-icon bg-light-green">
-                        <img
-                          src="@/assets/images/flights.svg"
-                          alt="file-storage"
-                        />
-                      </div>
-                      <div class="recent-transaction-item-content">
-                        <div class="flex space-between">
-                          <div>
-                            <p class="recent-transaction-item-title">Hamleys</p>
-                            <p class="recent-transaction-item-date">
-                              20 May 2020
-                            </p>
-                          </div>
-                          <div class="recent-transaction-item-amount">
-                            <p class="recent-transaction-item-amount-value">
-                              +$ 150
-                            </p>
-                          </div>
-                        </div>
-                        <div class="recent-transaction-item-refund">
-                          <p class="recent-transaction-item-refund-text">
-                            <span class="recent-transaction-item-refund-icon">
-                              <img
-                                src="@/assets/images/business-and-finance.svg"
-                                alt="business-and-finance"
-                              />
-                            </span>
-                            Refund on debit card
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="recent-transaction-item flex">
-                      <div class="recent-transaction-item-icon bg-light-red">
-                        <img
-                          src="@/assets/images/megaphone.svg"
-                          alt="file-storage"
-                        />
-                      </div>
-                      <div class="recent-transaction-item-content">
-                        <div class="flex space-between">
-                          <div>
-                            <p class="recent-transaction-item-title">Hamleys</p>
-                            <p class="recent-transaction-item-date">
-                              20 May 2020
-                            </p>
-                          </div>
-                          <div class="recent-transaction-item-amount">
-                            <p class="recent-transaction-item-amount-value">
-                              +$ 150
-                            </p>
-                          </div>
-                        </div>
-                        <div class="recent-transaction-item-refund">
-                          <p class="recent-transaction-item-refund-text">
-                            <span class="recent-transaction-item-refund-icon">
-                              <img
-                                src="@/assets/images/business-and-finance.svg"
-                                alt="business-and-finance"
-                              />
-                            </span>
-                            Refund on debit card
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="recent-transaction-item flex">
-                      <div class="recent-transaction-item-icon bg-light-blue">
-                        <img
-                          src="@/assets/images/file-storage.svg"
-                          alt="file-storage"
-                        />
-                      </div>
-                      <div class="recent-transaction-item-content">
-                        <div class="flex space-between">
-                          <div>
-                            <p class="recent-transaction-item-title">Hamleys</p>
-                            <p class="recent-transaction-item-date">
-                              20 May 2020
-                            </p>
-                          </div>
-                          <div class="recent-transaction-item-amount">
-                            <p class="recent-transaction-item-amount-value">
-                              +$ 150
-                            </p>
-                          </div>
-                        </div>
-                        <div class="recent-transaction-item-refund">
-                          <p class="recent-transaction-item-refund-text">
-                            <span class="recent-transaction-item-refund-icon">
-                              <img
-                                src="@/assets/images/business-and-finance.svg"
-                                alt="business-and-finance"
-                              />
-                            </span>
-                            Refund on debit card
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="view-all-card-transaction bg-light-green">
-                    <button class="view-all-card-transaction-btn text-green">
+                  <recent-transaction-component />
+                  <div class="view-all-card-transaction p10 bg-light-green">
+                    <button-component
+                      class="view-all-card-transaction-btn text-green"
+                      @btnClickHandler="clickAllCardTransactions"
+                    >
                       View all card transactions
-                    </button>
+                    </button-component>
                   </div>
                 </Accordion>
               </div>
@@ -315,14 +88,22 @@
 
 <script>
 import AddIcon from "@/components/icons/IconAdd.vue";
-import VisaIcon from "@/components/icons/IconVisa.vue";
 import Accordion from "@/components/AccordionComponent.vue";
 import ButtonComponent from "@/components/ButtonComponent.vue";
+import RecentTransactionComponent from "@/components/RecentTransactionComponent.vue";
+import CardComponent from "@/components/CardComponent.vue";
+import CardActionComponent from "@/components/CardActionComponent.vue";
 
 export default {
   data() {
     return {
       activeTab: "my-cards",
+      card: {
+        username: "Mark Henry",
+        number: "2563 7962 8724 6258",
+        cvv: "765",
+        validTill: "12/20",
+      },
     };
   },
   methods: {
@@ -332,15 +113,17 @@ export default {
     clickAddNewCard() {
       alert("Add New card Clicked");
     },
-    clickCardAction(action) {
-      alert(`${action} clicked`);
+    clickAllCardTransactions() {
+      alert("Show All Card Transactions");
     },
   },
   components: {
     AddIcon,
-    VisaIcon,
     Accordion,
     ButtonComponent,
+    RecentTransactionComponent,
+    CardComponent,
+    CardActionComponent,
   },
 };
 </script>

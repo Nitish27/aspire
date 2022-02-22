@@ -78,6 +78,8 @@ export default {
   padding: 20px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .accordion-header-title-icon {
@@ -87,13 +89,12 @@ export default {
 
 .accordion .icon {
   transform: rotate(180deg);
-  transition: transform 150ms ease-out;
+  transition: transform 250ms ease-out;
 }
 
 .accordion .accordion-content {
-  transition: all 150ms ease;
+  transition: all 250ms linear;
   border: 1px solid #f0f0f0;
-  /* padding: 20px; */
   border-top: 0;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
