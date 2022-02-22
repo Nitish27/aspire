@@ -56,92 +56,10 @@ export default {
 };
 </script>
 
+<style lang="scss">
+@import "./assets/scss/app.scss";
+</style>
+
 <style>
 @import "@/assets/base.css";
-
-.wrapper {
-  display: flex;
-  min-height: 100%;
-}
-
-.sidebar {
-  background: #0c365a;
-  width: 340px;
-  padding: 45px;
-  height: 100%;
-  position: fixed;
-}
-
-.logo-text {
-  color: rgb(255 255 255 / 30%);
-  font-size: 15px;
-}
-
-.main-navbar {
-  margin: 80px 0;
-}
-
-.nav-link {
-  display: block;
-  color: #fff;
-  background-repeat: no-repeat;
-  background-position: left;
-  font-size: 16px;
-  margin: 40px 0;
-  text-decoration: none;
-  outline: none;
-}
-
-.nav-link-icon {
-  vertical-align: middle;
-}
-
-.nav-link-text {
-  padding-left: 16px;
-}
-
-.nav-link:hover,
-.nav-link:focus,
-.nav-link:active,
-.router-link-active {
-  color: #01d167;
-}
-
-.nav-link:hover .b {
-  fill: #01d167;
-}
-
-.router-link-active {
-  font-weight: 600;
-}
-
-/* .nav-home {
-  background-image: url("@/assets/images/home.svg");
-}
-
-.nav-cards {
-  background-image: url("@/assets/images/debit-card/card.svg");
-}
-
-.nav-payments {
-  background-image: url("@/assets/images/payments.svg");
-}
-
-.nav-credits {
-  background-image: url("@/assets/images/credit.svg");
-}
-
-.nav-settings {
-  background-image: url("@/assets/images/account.svg");
-} */
-
-.view-container {
-  position: relative;
-  left: 340px;
-  width: calc(100% - 340px);
-  padding: 60px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
 </style>
