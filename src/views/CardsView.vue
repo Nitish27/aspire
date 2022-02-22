@@ -9,9 +9,9 @@
         </div>
       </div>
       <div class="card-add">
-        <button class="card-add-btn">
-          <AddIcon class="add-icon" />New Card
-        </button>
+        <button-component @btnClickHandler="clickAddNewCard">
+          <AddIcon class="add-icon" /> New Card
+        </button-component>
       </div>
     </div>
 
@@ -293,7 +293,8 @@
 <script>
 import AddIcon from "@/components/icons/IconAdd.vue";
 import VisaIcon from "@/components/icons/IconVisa.vue";
-import Accordion from "@/components/TheAccordion.vue";
+import Accordion from "@/components/AccordionComponent.vue";
+import ButtonComponent from "@/components/ButtonComponent.vue";
 
 export default {
   data() {
@@ -305,11 +306,15 @@ export default {
     tabClick(val) {
       this.activeTab = val;
     },
+    clickAddNewCard() {
+      alert("Add New card Clicked");
+    },
   },
   components: {
     AddIcon,
     VisaIcon,
     Accordion,
+    ButtonComponent,
   },
 };
 </script>
