@@ -80,6 +80,10 @@
   vertical-align: middle
 }
 
+.cursor-pointer {
+  cursor: pointer
+}
+
 
 .wrapper {
   @extend .flex;
@@ -193,7 +197,7 @@
   @include border-radius(4px);
   font-size: 13px;
   font-weight: bold;
-  cursor: pointer;
+  @extend .cursor-pointer;
 }
 
 .add-icon {
@@ -334,6 +338,12 @@
   color: #0c365a;
 }
 
+.card-action-list-item-btn {
+  background: transparent;
+  border: 0;
+  @extend .cursor-pointer;
+}
+
 .recent-transactions {
   padding: 20px;
 }
@@ -408,5 +418,5 @@
   font-weight: 500;
   background: transparent;
   border: 0;
-  cursor: pointer;
+  @extend .cursor-pointer;
 }

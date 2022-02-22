@@ -9,7 +9,10 @@
         </div>
       </div>
       <div class="card-add">
-        <button-component @btnClickHandler="clickAddNewCard">
+        <button-component
+          class="card-add-btn"
+          @btnClickHandler="clickAddNewCard"
+        >
           <AddIcon class="add-icon" /> New Card
         </button-component>
       </div>
@@ -76,41 +79,61 @@
               <div class="card-action">
                 <div class="card-action-list">
                   <div class="card-action-list-item">
-                    <img
-                      src="@/assets/images/freeze-card.svg"
-                      alt="freeze card"
-                    />
-                    <p class="card-action-label">Freeze</p>
-                    <p class="card-action-label">Card</p>
+                    <button-component
+                      class="card-action-list-item-btn"
+                      @btnClickHandler="clickCardAction('freeze')"
+                    >
+                      <img
+                        src="@/assets/images/freeze-card.svg"
+                        alt="freeze card"
+                      />
+                      <p class="card-action-label">Freeze Card</p>
+                    </button-component>
                   </div>
                   <div class="card-action-list-item">
-                    <img
-                      src="@/assets/images/set-spend-limit.svg"
-                      alt="freeze card"
-                    />
-                    <p class="card-action-label">Set spend</p>
-                    <p class="card-action-label">limit</p>
+                    <button-component
+                      class="card-action-list-item-btn"
+                      @btnClickHandler="clickCardAction('set-spend-limit')"
+                    >
+                      <img
+                        src="@/assets/images/set-spend-limit.svg"
+                        alt="set spend limit"
+                      />
+                      <p class="card-action-label">Set spend limit</p>
+                    </button-component>
                   </div>
                   <div class="card-action-list-item">
-                    <img src="@/assets/images/gpay.svg" alt="freeze card" />
-                    <p class="card-action-label">Add</p>
-                    <p class="card-action-label">Gpay</p>
+                    <button-component
+                      class="card-action-list-item-btn"
+                      @btnClickHandler="clickCardAction('add-to-gpay')"
+                    >
+                      <img src="@/assets/images/gpay.svg" alt="add to gpay" />
+                      <p class="card-action-label">Add to Gpay</p>
+                    </button-component>
                   </div>
                   <div class="card-action-list-item">
-                    <img
-                      src="@/assets/images/replace-card.svg"
-                      alt="freeze card"
-                    />
-                    <p class="card-action-label">Replace</p>
-                    <p class="card-action-label">card</p>
+                    <button-component
+                      class="card-action-list-item-btn"
+                      @btnClickHandler="clickCardAction('replace-card')"
+                    >
+                      <img
+                        src="@/assets/images/replace-card.svg"
+                        alt="replace card"
+                      />
+                      <p class="card-action-label">Replace card</p>
+                    </button-component>
                   </div>
                   <div class="card-action-list-item">
-                    <img
-                      src="@/assets/images/deactivate-card.svg"
-                      alt="freeze card"
-                    />
-                    <p class="card-action-label">Cancel</p>
-                    <p class="card-action-label">card</p>
+                    <button-component
+                      class="card-action-list-item-btn"
+                      @btnClickHandler="clickCardAction('cancel-card')"
+                    >
+                      <img
+                        src="@/assets/images/deactivate-card.svg"
+                        alt="cancel card"
+                      />
+                      <p class="card-action-label">Cancel card</p>
+                    </button-component>
                   </div>
                 </div>
               </div>
@@ -308,6 +331,9 @@ export default {
     },
     clickAddNewCard() {
       alert("Add New card Clicked");
+    },
+    clickCardAction(action) {
+      alert(`${action} clicked`);
     },
   },
   components: {

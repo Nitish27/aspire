@@ -1,5 +1,5 @@
 <template>
-  <button class="card-add-btn" @click="btnClickHandler">
+  <button @click="btnClickHandler">
     <slot></slot>
   </button>
 </template>
