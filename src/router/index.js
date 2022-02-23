@@ -7,17 +7,17 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "home",
+      name: "Cards View",
       component: CardView,
     },
     {
       path: "/payments",
-      name: "Payment",
+      name: "Payments",
       component: () => import("../views/PaymentView.vue"),
     },
     {
       path: "/cards",
-      name: "cards",
+      name: "Cards View",
       component: () => CardView,
     },
     {
