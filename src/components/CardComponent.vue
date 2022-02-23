@@ -6,11 +6,13 @@
         @btnClickHandler="showCardNumber"
       >
         <img
-          class="show-card-number-icon"
+          class="show-card-number-icon mr5"
           src="@/assets/images/remove_red_eye.svg"
           alt="show card number"
         />
-        Show card number
+        <span>{{
+          isShowCardNumber ? "Hide card number" : "Show card number"
+        }}</span>
       </button-component>
     </div>
 
@@ -21,7 +23,37 @@
           src="@/assets/images/aspire-logo-1.svg"
         />
         <h2 class="card-front-username mt15 mb15">{{ card.username }}</h2>
-        <div class="card-front-number">
+        <div v-if="isShowCardNumber">
+          <input
+            type="text"
+            class="card-front-number-visible mr20"
+            :value="cardNumberMaskOne"
+            maxlength="4"
+            readonly
+          />
+          <input
+            type="text"
+            class="card-front-number-visible mr20"
+            :value="cardNumberMaskTwo"
+            maxlength="4"
+            readonly
+          />
+          <input
+            type="text"
+            class="card-front-number-visible mr20"
+            :value="cardNumberMaskThree"
+            maxlength="4"
+            readonly
+          />
+          <input
+            type="text"
+            class="card-front-number-visible mr20"
+            :value="cardNumberMaskFour"
+            maxlength="4"
+            readonly
+          />
+        </div>
+        <div class="card-front-number" v-else>
           <input
             type="password"
             class="card-front-number-field mr20"
@@ -88,14 +120,17 @@ export default {
       cardNumberMaskTwo: "",
       cardNumberMaskThree: "",
       cardNumberMaskFour: "",
+      isShowCardNumber: false,
     };
   },
   methods: {
     showCardNumber() {
-      alert("Show Card Number Clicked");
+      this.isShowCardNumber = !this.isShowCardNumber;
+
       // let fields = document.querySelectorAll(".card-front-number-field");
       // fields.forEach((field) => {
       //   field.type = "text";
+      //   field.classList = "card-front-number-visible";
       // });
     },
   },
